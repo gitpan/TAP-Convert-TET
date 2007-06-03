@@ -11,7 +11,7 @@ my %EXE = (
             'Getopt::Long' => '2.34',
             'Pod::Usage'   => '1.12',
         },
-        EXE_FILES => ['examples/tap2tet'],
+        EXE_FILES => ['bin/tap2tet'],
     }
 );
 

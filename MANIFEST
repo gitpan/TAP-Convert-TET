@@ -1,6 +1,6 @@
+bin/tap2tet
 Changes
 examples/sample.tap
-examples/tap2tet
 lib/TAP/Convert/TET.pm
 Makefile.PL
 MANIFEST

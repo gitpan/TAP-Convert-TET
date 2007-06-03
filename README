@@ -1,4 +1,4 @@
-TAP-Convert-TET version 0.1
+TAP-Convert-TET version 0.2
 
 INSTALLATION
 
@@ -12,7 +12,7 @@ To install this module, run the following commands:
 
 DEPENDENCIES
 
-None.
+TAP::Parser 0.51
 
 COPYRIGHT AND LICENCE
 

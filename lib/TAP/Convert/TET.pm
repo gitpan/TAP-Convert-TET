@@ -7,7 +7,7 @@ use TAP::Parser 0.51;
 use Scalar::Util qw/blessed/;
 use POSIX qw/strftime uname/;
 
-use version; our $VERSION = qv( '0.1' );
+use version; our $VERSION = qv( '0.2' );
 
 use constant TCC_VERSION     => '3.7a';
 use constant TIME_FORMAT     => '%H:%M:%S';           # 20:09:33
@@ -26,7 +26,9 @@ my %RESULT_TYPE = (
 
 BEGIN {
     for my $attr (
-        qw(writer tcc_version time_format datetime_format program sequence) ) {
+        qw(writer tcc_version time_format datetime_format program
+        sequence)
+      ) {
         no strict 'refs';
         *$attr = sub {
             my $self = shift;
@@ -48,9 +50,7 @@ sub _initialize {
     my $self = shift;
     my $args = shift || {};
 
-    my $sig = __PACKAGE__ . '->new';
-
-    croak "The only argument to $sig must be a hash reference"
+    croak "The only argument to new must be a hash reference"
       unless 'HASH' eq ref $args;
 
     $self->writer(
@@ -152,11 +152,12 @@ sub convert {
             $self->tet( 520, "$seq $test_number 000000000 1 1",
                 $result->as_string );
 
-            my $rc = $result->has_skip ? 3
+            my $rc =
+                $result->has_skip ? 3
               : $result->has_todo ? 5
               : $result->is_ok    ? 0
               :                     1;
-              
+
             $self->tet(
                 220,
                 "$seq $test_number $rc $time",
@@ -182,7 +183,7 @@ TAP::Convert::TET - Convert TAP to TET
 
 =head1 VERSION
 
-This document describes TAP::Convert::TET version 0.1
+This document describes TAP::Convert::TET version 0.2
 
 =head1 SYNOPSIS
 
@@ -203,6 +204,14 @@ This document describes TAP::Convert::TET version 0.1
 
 Simpleminded converter that turns TAP into a TET journal. See
 L<http://tetworks.opengroup.org/> for more information about TET.
+
+TET is used by the Linux Standard Base project. This module and the
+associated tap2tet program are intended to help integrate Perl's tests
+with LSB as part of an effort to incorporate Perl into LSB 3.2. See:
+
+L<http://www.nntp.perl.org/group/perl.perl5.porters/2007/05/msg124480.html>
+
+for more information.
 
 =head1 INTERFACE 
 
@@ -264,6 +273,9 @@ Read test results from a C<TAP::Parser> instance and output them in TET
 format. The optional C<$name> parameter may be used to provide the name
 of the test script that was the original source of the results.
 
+Convert may be called more than once to merge multiple TAP transcripts
+into a single TET journal.
+
 =item C<< write( $string ) >>
 
 Write a line to the TET output stream. Internal use.
@@ -310,7 +322,7 @@ TAP::Convert::TET requires no configuration files or environment variables.
 
 =head1 DEPENDENCIES
 
-None.
+    TAP::Parser 0.51
 
 =head1 INCOMPATIBILITIES
 

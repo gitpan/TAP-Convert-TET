@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                TAP-Convert-TET
-version:             v0.1
+version:             v0.2
 abstract:            Convert TAP to TET
 license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.32

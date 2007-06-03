@@ -1,0 +1,35 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 b56b671a33fc098f294d171bad9f1dc6558cf2fc Changes
+SHA1 9c83c9843e86f25b334be668abd596d3c466754c MANIFEST
+SHA1 4af0dafd4be315b19ffeb53225acf353567bfaf2 META.yml
+SHA1 bcfa65fe446fe1c0536873bb28d596cdc158b162 Makefile.PL
+SHA1 f37b66282ea344e0e102d36f2dc3143635738759 README
+SHA1 fb0f2d9826d074242884f1a81a069052ff8ac8e7 examples/sample.tap
+SHA1 07cbdc25147190399b1ae6dd24ca351eaba9c01b examples/tap2tet
+SHA1 9154a106233dc494968f8f1002a95c0ff3587239 lib/TAP/Convert/TET.pm
+SHA1 f1c2636427921539f8e172c829f27c35e3208f0c t/00.load.t
+SHA1 702957662035e1f51b627922a0ae628127e67aff t/10.basic.t
+SHA1 bdd09cf1930990e0da69bcd59e551c6b162f24d0 t/pod-coverage.t
+SHA1 0190346d7072d458c8a10a45c19f86db641dcc48 t/pod.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (Darwin)
+
+iD8DBQFGYxEfwoknRJZQnCERAs6HAJ0RYvL4sP9+Kryyiu0YV7J+S1oMwgCePrJZ
+3/QEyeZVxA6IPGSAmhFd+EY=
+=iV4A
+-----END PGP SIGNATURE-----

@@ -3,11 +3,11 @@ package TAP::Convert::TET;
 use warnings;
 use strict;
 use Carp;
-use TAP::Parser 0.51;
+use TAP::Parser;
 use Scalar::Util qw/blessed/;
 use POSIX qw/strftime uname/;
 
-use version; our $VERSION = qv( '0.2' );
+use version; our $VERSION = qv( '0.2.1' );
 
 use constant TCC_VERSION     => '3.7a';
 use constant TIME_FORMAT     => '%H:%M:%S';           # 20:09:33
@@ -183,7 +183,7 @@ TAP::Convert::TET - Convert TAP to TET
 
 =head1 VERSION
 
-This document describes TAP::Convert::TET version 0.2
+This document describes TAP::Convert::TET version 0.2.1
 
 =head1 SYNOPSIS
 

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::More;
 use TAP::Convert::TET;
-use TAP::Parser 0.51;
+use TAP::Parser;
 
 my @schedule;
 
